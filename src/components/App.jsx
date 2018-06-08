@@ -4,7 +4,8 @@ import {
 	BrowserRouter as
 	Router, // Switch, Route, Link,
 } from 'react-router-dom';
-import Toggle from './Toggle.jsx';
+// import Toggle from './Toggle.jsx';
+import Toggle from './ToggleRenderProps.jsx';
 
 import css from './App.css'; // eslint-disable-line no-unused-vars
 
@@ -15,10 +16,30 @@ const App = () => (
 				<h1>Hello World</h1>
 			</header>
 			<body className="Body">
-				<Toggle />
-				<Toggle>
+				<Toggle render={({ on, toggle }) => (
+					<div>
+						{
+							on &&
+								<h1>Show me</h1>
+						}
+						<button onClick={toggle}>Show/Hide</button>
+					</div>
+				)}
+				/>
+
+				<Toggle render={({ on, toggle }) => (
+					<div>
+						{
+							on &&
+								<nav>Nav Item</nav>
+						}
+						<button onClick={toggle}>Menu</button>
+					</div>
+				)}
+				/>
+				{/* <Toggle>
 					<h1>Wow this is neat</h1>
-				</Toggle>
+				</Toggle> */}
 			</body>
 		</div>
 	</Router>
