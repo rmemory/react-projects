@@ -4,22 +4,22 @@ import {
 	BrowserRouter as
 	Router, // Switch, Route, Link,
 } from 'react-router-dom';
+import Toggle from './Toggle.jsx';
 
 import css from './App.css'; // eslint-disable-line no-unused-vars
 
 const App = () => (
 	<Router>
 		<div className="App">
-			<h1>Hello World</h1>
-			{/* <header>
-				<Link to="/">  eslint-disable-line
-					<h1>Hello World</h1>
-				</Link>
+			<header>
+				<h1>Hello World</h1>
 			</header>
-			<Switch>
-				<Route exact path="/" component={App} />
-				<Route path="/:id" component={App} />
-			</Switch> */}
+			<body className="Body">
+				<Toggle />
+				<Toggle>
+					<h1>Wow this is neat</h1>
+				</Toggle>
+			</body>
 		</div>
 	</Router>
 );
