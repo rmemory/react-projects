@@ -1,5 +1,5 @@
 /* eslint-disable react/no-did-mount-set-state */
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
 	BrowserRouter as
 	Router, // Switch, Route, Link,
@@ -7,6 +7,8 @@ import {
 // import Toggle from './Toggle.jsx';
 // import Toggle from './ToggleRenderProps.jsx';
 import Toggle from './ToggleRPC.jsx';
+import Portal from './Portal.jsx';
+import Modal from './Modal.jsx';
 
 import css from './App.css'; // eslint-disable-line no-unused-vars
 
@@ -20,13 +22,12 @@ const App = () => (
 				<Toggle>
 					{
 						({ on, toggle }) => (
-							<div>
-								{
-									on &&
-									<h1>Show me</h1>
-								}
-								<button onClick={toggle}>Show/Hide</button>
-							</div>
+							<Fragment>
+								<button onClick={toggle}>Login</button>
+								<Modal on={on} toggle={toggle}>
+									<h1>This is modal stuff</h1>
+								</Modal>
+							</Fragment>
 						)
 					}
 				</Toggle>
@@ -44,6 +45,10 @@ const App = () => (
 						)
 					}
 				</Toggle>
+
+				<Portal>
+					<h1>Hi, I am in a portal</h1>
+				</Portal>
 			</body>
 		</div>
 	</Router>
