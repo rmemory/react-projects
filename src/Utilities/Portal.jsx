@@ -19,7 +19,8 @@ export default class Portal extends Component {
 	}
 
 	render() {
-		const { children } = this.props;
+		const { children } = this.props; // eslint-disable-line react/prop-types
 		return ReactDOM.createPortal(children, this.el);
 	}
 }
+

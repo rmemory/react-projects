@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Toggle extends Component {
 	state = {
@@ -28,3 +29,11 @@ export default class Toggle extends Component {
 		);
 	}
 }
+
+Toggle.propTypes = {
+	children: PropTypes.string,
+};
+
+Toggle.defaultProps = {
+	children: undefined,
+};

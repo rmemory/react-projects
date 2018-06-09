@@ -15,9 +15,10 @@ const App = () => (
 			<header>
 				<h1>Hello World</h1>
 			</header>
-			<body className="Body">
+			<section className="Body">
 				<Toggle>
 					{
+						/* this.props.children will be a function */
 						({ on, toggle }) => (
 							<Fragment>
 								<button onClick={toggle}>Login</button>
@@ -31,6 +32,7 @@ const App = () => (
 
 				<Toggle>
 					{
+						/* this.props.children will be a function */
 						({ on, toggle }) => (
 							<div>
 								{
@@ -46,7 +48,7 @@ const App = () => (
 				<Portal>
 					<h1>Hi, I am in a portal</h1>
 				</Portal>
-			</body>
+			</section>
 		</div>
 	</Router>
 );

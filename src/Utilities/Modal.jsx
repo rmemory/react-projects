@@ -1,30 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Portal from './Portal.jsx';
 import Icon from './Icon.jsx';
 
-export default class Modal extends Component {
-	render() {
-		const { children, toggle, on } = this.props;
-		return (
-			<Portal>
-				{on &&
-					<ModalWrapper>
-						<ModalCard>
-							<CloseButton onClick={toggle}>
-								<Icon name="close" />
-							</CloseButton>
-							<div>
-								{ children }
-							</div>
-						</ModalCard>
-						<Background onClick={toggle} />
-					</ModalWrapper>
-				}
-			</Portal>
-		);
-	}
-}
+// import { Card } from '../Elements';
+
+const Modal = (props) => {
+	const { children, toggle, on } = props;
+	return (
+		<Portal>
+			{on &&
+				<ModalWrapper>
+					<ModalCard>
+						<CloseButton onClick={toggle}>
+							<Icon name="close" />
+						</CloseButton>
+						<div>
+							{ children }
+						</div>
+					</ModalCard>
+					<Background onClick={toggle} />
+				</ModalWrapper>
+			}
+		</Portal>
+	);
+};
+
+Modal.propTypes = {
+	children: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+	toggle: PropTypes.func.isRequired,
+	on: PropTypes.bool.isRequired,
+};
+
+export default Modal;
 
 const ModalWrapper = styled.div`
 	position: absolute;

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Toggle extends Component {
 	state = {
@@ -13,10 +14,16 @@ export default class Toggle extends Component {
 
 	render() {
 		const { children } = this.props;
-		return (children({
-			on: this.state.on,
-			toggle: this.toggle,
-		})
+		return (
+			children({
+				on: this.state.on,
+				toggle: this.toggle,
+			})
 		);
 	}
 }
+
+Toggle.propTypes = {
+	children: PropTypes.func.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
