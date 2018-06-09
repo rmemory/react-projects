@@ -4,11 +4,8 @@ import {
 	BrowserRouter as
 	Router, // Switch, Route, Link,
 } from 'react-router-dom';
-// import Toggle from './Toggle.jsx';
-// import Toggle from './ToggleRenderProps.jsx';
-import Toggle from './ToggleRPC.jsx';
-import Portal from './Portal.jsx';
-import Modal from './Modal.jsx';
+
+import { Toggle, Portal, Modal } from '../Utilities';
 
 import css from './App.css'; // eslint-disable-line no-unused-vars
 
