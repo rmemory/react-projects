@@ -16,6 +16,7 @@ export default class Toggle extends Component {
 		return (
 			<div>
 				{
+					/* This is if there are no children */
 					!this.props.children && this.state.on &&
 						<h1>Toggle Me</h1>
 				}

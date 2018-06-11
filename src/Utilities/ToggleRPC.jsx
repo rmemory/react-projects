@@ -24,6 +24,6 @@ export default class Toggle extends Component {
 }
 
 Toggle.propTypes = {
-	children: PropTypes.func.isRequired, // eslint-disable-line react/forbid-prop-types
+	children: PropTypes.func.isRequired,
 };
 
